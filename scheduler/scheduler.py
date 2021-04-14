@@ -25,7 +25,7 @@ def start():
     # - replace_existing in combination with the unique ID prevents duplicate copies of the job
 
     # interval 
-    scheduler.add_job(func = testFlow.crawler, trigger='interval', seconds=10, id="crawler", replace_existing=True)
+    scheduler.add_job(func = testFlow.crawler, trigger='interval', seconds=100, id="crawler", replace_existing=True)
     # executed at 12:30 am daily
     scheduler.add_job(func = testFlow.analyzer, trigger='cron', hour=0, minute=30, id="analyzer", replace_existing=True)
     # this acts like an interval
